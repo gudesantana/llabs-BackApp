@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend para buscar dados do Climatempo e salvar no PostgreSQL",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "express": "^4.21.1",
+    "pg": "^8.13.0"
+  }
+}
