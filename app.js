@@ -39,8 +39,8 @@ app.get('/atualizar-previsao', async (req, res) => {
     const connParams = {
         user: 'postgres',
         host: 'llabsrdspgdb.cj0iow28m1f5.us-east-1.rds.amazonaws.com',
-        database: 'llabsrdspgdb',
-        password: 'llabs1278',
+        database: 'llabsrdspgdbapps',
+        password: 'xxx',
         port: 5432,
     };
 
