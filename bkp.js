@@ -2,7 +2,6 @@ const axios = require('axios');
 const mysql = require('mysql2/promise');
 const express = require('express');
 const app = express();
-const cors = require('cors');
 const port = process.env.PORT || 3000;
 
 // Função para buscar dados do Climatempo
@@ -15,11 +14,9 @@ async function buscarDadosClimatempo(apiUrl) {
     }
 }
 
-// Habilitar CORS para todos os sites
-app.use(cors());
-
 // Função para salvar dados no MySQL
 async function salvarDadosMysql(dados, connParams) {
+    const mysql = require('mysql2/promise');
     const connection = await mysql.createConnection(connParams);
 
     try {
@@ -37,14 +34,14 @@ async function salvarDadosMysql(dados, connParams) {
 }
 
 // URL da API do Climatempo (exemplo)
-const apiUrl = 'http://apiadvisor.climatempo.com.br/api/v1/anl/synoptic/locale/BR?token=98d5c9a353cd407b50a84c61b42134cd';
+const apiUrl = 'http://apiadvisor.climatempo.com.br/api/v1/anl/synoptic/locale/BR?token=dbb770dd72b02812c430b49d7ab394ea';
 
 // Parâmetros de conexão com o MySQL
 const connParams = {
     host: '34.206.117.8',
     user: 'admin',
     database: 'llabsrdspgdbapps',
-    password: 'xxxxx',
+    password: 'llabs1278',
     port: 3306,
     ssl: {
         rejectUnauthorized: false
