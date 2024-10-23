@@ -44,7 +44,7 @@ const connParams = {
     host: '10.60.3.211',
     user: 'admin',
     database: 'llabsrdspgdbapps',
-    password: 'llabs1278',
+    password: 'xxxx',
     port: 3306,
     ssl: {
         rejectUnauthorized: false
