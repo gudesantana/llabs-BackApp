@@ -37,14 +37,14 @@ async function salvarDadosMysql(dados, connParams) {
 }
 
 // URL da API do Climatempo (exemplo)
-const apiUrl = 'http://apiadvisor.climatempo.com.br/api/v1/anl/synoptic/locale/BR?token=98d5c9a353cd407b50a84c61b42134cd';
+const apiUrl = 'http://apiadvisor.climatempo.com.br/api/v1/anl/synoptic/locale/BR?token=a9924e0beef6657eee918a5504e0cb6f';
 
 // Parâmetros de conexão com o MySQL
 const connParams = {
-    host: '34.206.117.8',
+    host: '10.60.3.211',
     user: 'admin',
     database: 'llabsrdspgdbapps',
-    password: 'xxxxx',
+    password: 'llabs1278',
     port: 3306,
     ssl: {
         rejectUnauthorized: false
@@ -56,7 +56,9 @@ app.get('/atualizar-previsao', async (req, res) => {
     try {
         const dados = await buscarDadosClimatempo(apiUrl);
         await salvarDadosMysql(dados, connParams);
-        res.send('Dados salvos com sucesso!');
+        
+        // Retorne os dados gravados
+        res.json(dados);
     } catch (error) {
         res.status(500).send(`Erro: ${error.message}`);
     }
